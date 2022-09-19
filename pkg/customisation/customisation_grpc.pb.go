@@ -18,8 +18,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type InstanceCustomisationPluginClient interface {
-	// Attempts to add additional runtime options to the UE application
-	RuntimeOptions(ctx context.Context, in *RuntimeOptionsRequest, opts ...grpc.CallOption) (*RuntimeOptionsResponse, error)
+	// Applies modifications to the runtime options for a given instance of a Pixel Streaming application
+	UpdateRuntimeOptions(ctx context.Context, in *UpdateRuntimeOptionsRequest, opts ...grpc.CallOption) (*UpdateRuntimeOptionsResponse, error)
 }
 
 type instanceCustomisationPluginClient struct {
@@ -30,9 +30,9 @@ func NewInstanceCustomisationPluginClient(cc grpc.ClientConnInterface) InstanceC
 	return &instanceCustomisationPluginClient{cc}
 }
 
-func (c *instanceCustomisationPluginClient) RuntimeOptions(ctx context.Context, in *RuntimeOptionsRequest, opts ...grpc.CallOption) (*RuntimeOptionsResponse, error) {
-	out := new(RuntimeOptionsResponse)
-	err := c.cc.Invoke(ctx, "/proto.InstanceCustomisationPlugin/RuntimeOptions", in, out, opts...)
+func (c *instanceCustomisationPluginClient) UpdateRuntimeOptions(ctx context.Context, in *UpdateRuntimeOptionsRequest, opts ...grpc.CallOption) (*UpdateRuntimeOptionsResponse, error) {
+	out := new(UpdateRuntimeOptionsResponse)
+	err := c.cc.Invoke(ctx, "/proto.InstanceCustomisationPlugin/UpdateRuntimeOptions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -43,8 +43,8 @@ func (c *instanceCustomisationPluginClient) RuntimeOptions(ctx context.Context, 
 // All implementations must embed UnimplementedInstanceCustomisationPluginServer
 // for forward compatibility
 type InstanceCustomisationPluginServer interface {
-	// Attempts to add additional runtime options to the UE application
-	RuntimeOptions(context.Context, *RuntimeOptionsRequest) (*RuntimeOptionsResponse, error)
+	// Applies modifications to the runtime options for a given instance of a Pixel Streaming application
+	UpdateRuntimeOptions(context.Context, *UpdateRuntimeOptionsRequest) (*UpdateRuntimeOptionsResponse, error)
 	mustEmbedUnimplementedInstanceCustomisationPluginServer()
 }
 
@@ -52,8 +52,8 @@ type InstanceCustomisationPluginServer interface {
 type UnimplementedInstanceCustomisationPluginServer struct {
 }
 
-func (UnimplementedInstanceCustomisationPluginServer) RuntimeOptions(context.Context, *RuntimeOptionsRequest) (*RuntimeOptionsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RuntimeOptions not implemented")
+func (UnimplementedInstanceCustomisationPluginServer) UpdateRuntimeOptions(context.Context, *UpdateRuntimeOptionsRequest) (*UpdateRuntimeOptionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateRuntimeOptions not implemented")
 }
 func (UnimplementedInstanceCustomisationPluginServer) mustEmbedUnimplementedInstanceCustomisationPluginServer() {
 }
@@ -69,20 +69,20 @@ func RegisterInstanceCustomisationPluginServer(s grpc.ServiceRegistrar, srv Inst
 	s.RegisterService(&InstanceCustomisationPlugin_ServiceDesc, srv)
 }
 
-func _InstanceCustomisationPlugin_RuntimeOptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RuntimeOptionsRequest)
+func _InstanceCustomisationPlugin_UpdateRuntimeOptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRuntimeOptionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(InstanceCustomisationPluginServer).RuntimeOptions(ctx, in)
+		return srv.(InstanceCustomisationPluginServer).UpdateRuntimeOptions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/proto.InstanceCustomisationPlugin/RuntimeOptions",
+		FullMethod: "/proto.InstanceCustomisationPlugin/UpdateRuntimeOptions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(InstanceCustomisationPluginServer).RuntimeOptions(ctx, req.(*RuntimeOptionsRequest))
+		return srv.(InstanceCustomisationPluginServer).UpdateRuntimeOptions(ctx, req.(*UpdateRuntimeOptionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -95,8 +95,8 @@ var InstanceCustomisationPlugin_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*InstanceCustomisationPluginServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "RuntimeOptions",
-			Handler:    _InstanceCustomisationPlugin_RuntimeOptions_Handler,
+			MethodName: "UpdateRuntimeOptions",
+			Handler:    _InstanceCustomisationPlugin_UpdateRuntimeOptions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

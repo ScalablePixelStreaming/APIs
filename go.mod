@@ -1,4 +1,4 @@
-module github.com/scalablepixelstreaming/api
+module github.com/scalablepixelstreaming/apis
 
 go 1.18
 
