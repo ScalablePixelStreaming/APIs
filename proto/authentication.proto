@@ -1,0 +1,60 @@
+syntax = "proto3";
+package proto;
+option go_package = "github.com/scalablepixelstreaming/apis/pkg/authentication";
+
+// The interface implemented by Authentication Plugins
+service AuthenticationPlugin
+{
+	// Attempts to authenticate a user
+	rpc Authenticate (AuthenticationRequest) returns (AuthenticationResponse) {}
+}
+
+message AuthenticationRequest
+{
+	// The authentication token, which we expect to have been issued by an external identity provider.
+	// This will be empty in the initial (pre-redirect) request for workflows where users are redirected to a URL to obtain a token.
+	string token = 1;
+	
+	// Used to indicate to the Authentication Plugin which identity provider should be used when the plugin implementation supports interacting with multiple
+	// identity providers. This field is ignored when the plugin implementation supports only a single identity provider and should be left as an empty string.
+	// For workflows where users are redirected to a URL to obtain a token, this value must be the same in both the pre-redirect and post-redirect requests.
+	string provider = 2;
+}
+
+message AuthenticationResponse
+{
+	// Represents the possible authentication outcomes
+	enum Outcome {
+		
+		// The authentication token was empty and the user should be redirected to an external identity provider to obtain a token
+		REDIRECT = 0;
+		
+		// The supplied authentication token was invalid
+		INVALID_TOKEN = 1;
+		
+		// The user was successfully authenticated
+		AUTHENTICATED = 2;
+		
+		// An error occurred when attempting to perform authentication
+		ERROR = 3;
+	}
+	
+	// The outcome of the authentication request
+	Outcome outcome = 1;
+	
+	// At most one of these fields will ever be set
+	oneof payload
+	{
+		// The URL of an external identity provider to which the user should be redirected to obtain an authentication token
+		// (Set when the outcome is REDIRECT)
+		string url = 2;
+		
+		// The unique ID representing the authenticated user
+		// (Set when the outcome is AUTHENTICATED)
+		string id = 3;
+		
+		// The message providing details of the error that occurred
+		// (Set when the outcome is ERROR)
+		string error = 4;
+	}
+}

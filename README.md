@@ -4,6 +4,8 @@ This repository contains definitions and Go packages for consuming the public AP
 
 The following APIs are currently available:
 
+- **Authentication Plugin Plugin API:** used to provide authentication for Pixel Streaming applications.
+
 - **Instance Customisation Plugin API:** used to dynamically modify the runtime options of individual instances of a Pixel Streaming application.
 
 
