@@ -38,6 +38,20 @@ message RuntimeOptions
 		// The number of pixels in the Y axis for the resolution
 		int32 y = 2;
 	}
+
+	message PixelStreaming
+	{
+		message WebRTC
+		{
+
+			// The maximum FPS WebRTC will try to capture/encode/transmit.
+			int64 maxFPS = 1;
+		}
+
+		// Changing the following settings will configure the WebRTC library that the Pixel Streaming Plugin uses internally
+		WebRTC webRTC = 1;
+	}
+
 	
 	// The ResX and ResY arguments to be set
 	Resolution resolution = 1;
@@ -63,4 +77,7 @@ message RuntimeOptions
 	
 	// A list of Kubernetes volumes to mount to the UE application pod
 	repeated VolumeMounts volumeMounts = 4;
+
+	// Changing the following settings will configure the Pixel Streaming Plugin
+	PixelStreaming pixelStreaming = 5;
 }
