@@ -6,7 +6,7 @@ One of the key features to instance customisation is the ability to send data fr
 
 This is a string that can be formatted to send any number of arbitrary options from your frontend to your instance customisation plugin and it might look something like the following:
 
-```
+```json
 {
    "user": "UserA",
    "map": "Level_1",
