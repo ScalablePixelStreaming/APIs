@@ -8,6 +8,17 @@ The following APIs are currently available:
 
 - **Instance Customisation Plugin API:** used to dynamically modify the runtime options of individual instances of a Pixel Streaming application.
 
+## Instance Customisation Plugin API Docs
+- [Overview](docs/instance-customisation/overview.md)
+- [What can I customise](docs/what-can-i-customise.md)
+  - [Plugin Options](docs/instance-customisation/what-can-i-customise.md#plugin-options)
+  - [Runtime Options](docs/instance-customisation/what-can-i-customise.md#runtime-options)
+- [Usage](docs/instance-customisation/usage.md)
+  - [Generating code](docs/instance-customisation/usage.md#generating-code)
+  - [Adding customisation package](docs/instance-customisation/usage.md#adding-customisation-package-to-your-go-application)
+  - [Importing the package](docs/instance-customisation/usage.md#importing-the-package)
+  - [Implementing the API](docs/instance-customisation/usage.md#implementing-the-api-in-go)
+
 
 ## Legal
 
