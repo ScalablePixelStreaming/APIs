@@ -10,7 +10,7 @@ The following APIs are currently available:
 
 ## Instance Customisation Plugin API Docs
 - [Overview](docs/instance-customisation/overview.md)
-- [What can I customise](docs/what-can-i-customise.md)
+- [What can I customise](docs/instance-customisation/what-can-i-customise.md)
   - [Plugin Options](docs/instance-customisation/what-can-i-customise.md#plugin-options)
   - [Runtime Options](docs/instance-customisation/what-can-i-customise.md#runtime-options)
 - [Usage](docs/instance-customisation/usage.md)
