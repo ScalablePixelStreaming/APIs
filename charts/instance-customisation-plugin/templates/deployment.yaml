@@ -38,9 +38,7 @@ spec:
       tolerations:
         - operator: "Exists"
       containers:
-      - command:
-        - /instance-customisation-plugin/server
-        image: {{ .Values.image }}
+      - image: {{ .Values.image }}
         imagePullPolicy: Always
         name: sps-instance-customisation-plugin
         ports:
