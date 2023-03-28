@@ -18,4 +18,4 @@ To push your image to a registry of your choice:
 docker push YOUR_REGISTRY/YOUR_REPO/instance-customisation-plugin:latest
 ```
 
-You can then use the above image tag to install the example helm chart supplied at /charts/instance-customisation-plugin
+You can then use the above image tag to install the example helm chart supplied at [/charts/instance-customisation-plugin](/charts/instance-customisation-plugin)
