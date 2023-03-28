@@ -1,0 +1,4 @@
+
+image: "ghcr.io/scalablepixelstreaming/apis/instance-customisation-plugin:latest"
+
+port: 55774

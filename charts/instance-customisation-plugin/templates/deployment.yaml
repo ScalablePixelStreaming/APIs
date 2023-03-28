@@ -1,0 +1,48 @@
+# This is the service that allows communication between to the plugin pod 
+# that manipulates the runtime options for the Pixel Streaming application
+apiVersion: v1
+kind: Service
+metadata:
+  name: sps-instance-customisation-plugin
+  namespace: {{ .Release.Namespace }}
+spec:
+  clusterIP: None
+  ports:
+  - port: {{ .Values.port }}
+    protocol: TCP
+    targetPort: {{ .Values.port }}
+  selector:
+    app.kubernetes.io/name: sps-instance-customisation-plugin
+
+---
+
+# This deployment deploys the app-customisation-plugin, which is the plugin responsible
+# for manipulating the runtime options of our Pixel Streaming application
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: sps-instance-customisation-plugin
+  name: sps-instance-customisation-plugin
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: sps-instance-customisation-plugin
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: sps-instance-customisation-plugin
+    spec:
+      tolerations:
+        - operator: "Exists"
+      containers:
+      - command:
+        - /instance-customisation-plugin/server
+        image: {{ .Values.image }}
+        imagePullPolicy: Always
+        name: sps-instance-customisation-plugin
+        ports:
+        - containerPort: {{ .Values.port }}
+---
