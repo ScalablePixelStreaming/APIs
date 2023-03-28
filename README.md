@@ -21,6 +21,8 @@ The following APIs are currently available:
 - [Deploying the plugin](/docs/instance-customisation/deploy.md)
   - [Building a container](/docs/instance-customisation/deploy.md#building-a-container)
   - [Deploying to the cluster](/docs/instance-customisation/deploy.md#deploying-to-the-cluster)
+- [Configure Application](/docs/instance-customisation/application.md)
+  - [Dashboard](/docs/instance-customisation/application.md#dashboard)
 
 
 ## Legal
