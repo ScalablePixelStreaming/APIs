@@ -18,9 +18,9 @@ The following APIs are currently available:
   - [Adding customisation package](/docs/instance-customisation/usage.md#adding-customisation-package-to-your-go-application)
   - [Importing the package](/docs/instance-customisation/usage.md#importing-the-package)
   - [Implementing the API](/docs/instance-customisation/usage.md#implementing-the-api-in-go)
-- [Deploying the plugin](/docs/instance-customisation/deploy)
-  - [Building a container](/docs/instance-customisation/deploy#building-a-container)
-  - [Deploying to the cluster](/docs/instance-customisation/deploy#deploying-to-the-cluster)
+- [Deploying the plugin](/docs/instance-customisation/deploy.md)
+  - [Building a container](/docs/instance-customisation/deploy.md#building-a-container)
+  - [Deploying to the cluster](/docs/instance-customisation/deploy.md#deploying-to-the-cluster)
 
 
 ## Legal
