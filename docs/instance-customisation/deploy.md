@@ -4,7 +4,7 @@ Once you have built your instance customisation plugin it needs to be deployed t
 
 ### Building a container 
 
-In order to deploy your plugin to the Scalable Pixel Streaming cluster, it first needs to be put into a container. You can follow the docker guide [here](https://docs.docker.com/language/golang/build-images/) or check out the Dockerfile we have in examples [here](TODO:Link to example)
+In order to deploy your plugin to the Scalable Pixel Streaming cluster, it first needs to be put into a container. You can follow the docker guide [here](https://docs.docker.com/language/golang/build-images/) or check out the Dockerfile we have in examples [here](examples/golang/instance-customisation-plugin)
 
 ### Deploying to the cluster
 
