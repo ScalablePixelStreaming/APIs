@@ -10,3 +10,10 @@ In order to deploy your plugin to the Scalable Pixel Streaming cluster, it first
 
 Scalable Pixel Streaming is installed onto a [kubernetes](https://kubernetes.io/) cluster. Depending on what cloud platform you've installed Scalable Pixel Streaming onto will depend on how you access your cluster. Refer to the [Scalable Pixel Streaming documentation](http://docs.beta.scalablestreaming.io/) for information on how to access your cluster.
 
+There is a helm chart provided in this repository available [here](charts/instance-customisation-plugin). This chart includes the necessary resources to deploy an instance customisation plugin. By default the helm chart comes with the [example plugin](examples/golang/instance-customisation-plugin) already configured.
+
+To change the helm chart to use your own container image:
+
+```
+helm install instance-customisation-plugin charts/instance-customisation-plugin --set image=your_registry/your_repo/image:tag
+```
