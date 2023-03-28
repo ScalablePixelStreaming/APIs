@@ -1,0 +1,6 @@
+
+# The image of the instance customisation plugin container
+image: "ghcr.io/scalablepixelstreaming/apis/instance-customisation-plugin:latest"
+
+# The port this instance customisation plugin should listen on
+port: 55774
