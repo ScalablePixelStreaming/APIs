@@ -19,3 +19,9 @@ docker push YOUR_REGISTRY/YOUR_REPO/instance-customisation-plugin:latest
 ```
 
 You can then use the above image tag to install the example helm chart supplied at [/charts/instance-customisation-plugin](/charts/instance-customisation-plugin)
+
+For example
+
+```
+helm install instance-customisation-plugin charts/instance-customisation-plugin --set image=your_registry/your_repo/image:tag
+```
