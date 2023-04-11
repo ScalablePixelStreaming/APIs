@@ -3,81 +3,79 @@ package proto;
 option go_package = "github.com/scalablepixelstreaming/apis/pkg/customisation";
 
 // The interface implemented by Instance Customisation Plugins
-service InstanceCustomisationPlugin
-{
-	// Applies modifications to the runtime options for a given instance of a Pixel Streaming application
-	rpc UpdateRuntimeOptions (UpdateRuntimeOptionsRequest) returns (UpdateRuntimeOptionsResponse) {}
+service InstanceCustomisationPlugin {
+  // Applies modifications to the runtime options for a given instance of a
+  // Pixel Streaming application
+  rpc UpdateRuntimeOptions(UpdateRuntimeOptionsRequest)
+      returns (UpdateRuntimeOptionsResponse) {}
 }
 
-message UpdateRuntimeOptionsRequest
-{
-	// The ID of the application instance for which the runtime options are being modified
-	string instance = 1;
-	
-	// An opaque string representing optional configuration data to pass to the Instance Customisation Plugin
-	string pluginOptions = 2;
-	
-	// The incoming RuntimeOptions object that will be modified and sent back
-	RuntimeOptions runtimeOptions = 3;
+message UpdateRuntimeOptionsRequest {
+  // The ID of the application instance for which the runtime options are being
+  // modified
+  string instance = 1;
+
+  // An opaque string representing optional configuration data to pass to the
+  // Instance Customisation Plugin
+  string pluginOptions = 2;
+
+  // The incoming RuntimeOptions object that will be modified and sent back
+  RuntimeOptions runtimeOptions = 3;
 }
 
-message UpdateRuntimeOptionsResponse
-{
-	// The modified RuntimeOptions object
-	RuntimeOptions runtimeOptions = 1;
+message UpdateRuntimeOptionsResponse {
+  // The modified RuntimeOptions object
+  RuntimeOptions runtimeOptions = 1;
 }
 
-// Specifics about how this instance of the Pixel Streaming application should handle its runtime options (resolution, args)
-message RuntimeOptions
-{
-	message Resolution
-	{
-		// The number of pixels in the X axis for the resolution
-		int32 x = 1;
-		
-		// The number of pixels in the Y axis for the resolution
-		int32 y = 2;
-	}
+// Specifics about how this instance of the Pixel Streaming application should
+// handle its runtime options (resolution, args)
+message RuntimeOptions {
+  message Resolution {
+    // The number of pixels in the X axis for the resolution
+    int32 x = 1;
 
-	message PixelStreaming
-	{
-		message WebRTC
-		{
+    // The number of pixels in the Y axis for the resolution
+    int32 y = 2;
+  }
 
-			// The maximum FPS WebRTC will try to capture/encode/transmit.
-			int64 maxFPS = 1;
-		}
+  message PixelStreaming {
+    message WebRTC {
 
-		// Changing the following settings will configure the WebRTC library that the Pixel Streaming Plugin uses internally
-		WebRTC webRTC = 1;
-	}
+      // The maximum FPS WebRTC will try to capture/encode/transmit.
+      int64 maxFPS = 1;
+    }
 
-	
-	// The ResX and ResY arguments to be set
-	Resolution resolution = 1;
-	
-	// The current args that are being applied to a UE application. This should include any that SPS applies by default as well
-	// as any that are applied via the runtime args when creating the application via the REST API
-	repeated string args = 2;
-	
-	// Map of Environment Vars
-	map<string, string> environmentVariables = 3;
-	
-	message VolumeMounts
-	{
-		// The name of the Persistent Volume Claim
-		string name = 1;
-		
-		// The path to mount in the container
-		string mountPath = 2;
-		
-		// Whether to mount the path as read-only
-		bool readOnly = 3;
-	}
-	
-	// A list of Kubernetes volumes to mount to the UE application pod
-	repeated VolumeMounts volumeMounts = 4;
+    // Changing the following settings will configure the WebRTC library that
+    // the Pixel Streaming Plugin uses internally
+    WebRTC webRTC = 1;
+  }
 
-	// Changing the following settings will configure the Pixel Streaming Plugin
-	PixelStreaming pixelStreaming = 5;
+  // The ResX and ResY arguments to be set
+  Resolution resolution = 1;
+
+  // The current args that are being applied to a UE application. This should
+  // include any that SPS applies by default as well as any that are applied via
+  // the runtime args when creating the application via the REST API
+  repeated string args = 2;
+
+  // Map of Environment Vars
+  map<string, string> environmentVariables = 3;
+
+  message VolumeMounts {
+    // The name of the Persistent Volume Claim
+    string name = 1;
+
+    // The path to mount in the container
+    string mountPath = 2;
+
+    // Whether to mount the path as read-only
+    bool readOnly = 3;
+  }
+
+  // A list of Kubernetes volumes to mount to the UE application pod
+  repeated VolumeMounts volumeMounts = 4;
+
+  // Changing the following settings will configure the Pixel Streaming Plugin
+  PixelStreaming pixelStreaming = 5;
 }
