@@ -21,6 +21,9 @@ message UpdateRuntimeOptionsRequest {
 
   // The incoming RuntimeOptions object that will be modified and sent back
   RuntimeOptions runtimeOptions = 3;
+
+  // The ID of the player that is requesting an instance
+  string player = 4;
 }
 
 message UpdateRuntimeOptionsResponse {
