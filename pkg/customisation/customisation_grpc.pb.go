@@ -18,7 +18,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type InstanceCustomisationPluginClient interface {
-	// Applies modifications to the runtime options for a given instance of a Pixel Streaming application
+	// Applies modifications to the runtime options for a given instance of a
+	// Pixel Streaming application
 	UpdateRuntimeOptions(ctx context.Context, in *UpdateRuntimeOptionsRequest, opts ...grpc.CallOption) (*UpdateRuntimeOptionsResponse, error)
 }
 
@@ -43,7 +44,8 @@ func (c *instanceCustomisationPluginClient) UpdateRuntimeOptions(ctx context.Con
 // All implementations must embed UnimplementedInstanceCustomisationPluginServer
 // for forward compatibility
 type InstanceCustomisationPluginServer interface {
-	// Applies modifications to the runtime options for a given instance of a Pixel Streaming application
+	// Applies modifications to the runtime options for a given instance of a
+	// Pixel Streaming application
 	UpdateRuntimeOptions(context.Context, *UpdateRuntimeOptionsRequest) (*UpdateRuntimeOptionsResponse, error)
 	mustEmbedUnimplementedInstanceCustomisationPluginServer()
 }
