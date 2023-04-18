@@ -41,4 +41,4 @@ Volume mounts require a persistent volume claim to exist prior to attempting to 
 
 Any environment variables that you want to modify
 
-To see how you might update runtime options in your instance customisation plugin, you can refer to the [examples](examples/golang/instance-customisation-plugin) in this repository.
+To see how you might update runtime options in your instance customisation plugin, you can refer to the [examples](/examples/golang/instance-customisation-plugin) in this repository.
