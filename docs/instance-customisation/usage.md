@@ -1,6 +1,6 @@
 ## Usage
 
-The following usage guide is intended for users looking to implement the above API into a Go application. Although it is possible to generate the necessary code to implement the Instance Customisation Plugin API in other languages, we will not be covering that.
+The following usage guide is intended for users looking to implement the above API into a Go application. Although it is possible to generate the necessary code to implement the Instance Customisation Plugin API in other languages, we will not be covering that here.
 
 ### Generating code
 
@@ -36,7 +36,7 @@ type InstanceCustomisationPluginServer struct {
 }
 ```
 
-And the pointer receiver to implement the actual gRPC call that’s made from Scalable Pixel Streaming
+And the pointer receiver to implement the actual gRPC call that is made from Scalable Pixel Streaming
 
 ```go
 func (server *InstanceCustomisationPluginServer) UpdateRuntimeOptions(ctx context.Context, req *customisation.UpdateRuntimeOptionsRequest) (*customisation.UpdateRuntimeOptionsResponse, error) {

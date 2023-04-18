@@ -14,7 +14,7 @@ This is a string that can be formatted to send any number of arbitrary options f
 }
 ```
 
-Keeping in mind that this data can represent **anything that you want**. It’s up to you what you do with this in your instance customisation plugin.
+Keeping in mind that this data can represent **anything that you want**. It is up to you what you do with this in your instance customisation plugin.
 
 ### Runtime Options
 Runtime Options provides your instance customisation plugin with access to the configured options from your instances Application. These will be sent back to Scalable Pixel Streaming when requesting an instance, so any modifications your instance customisation plugin makes to these options will be reflected.
@@ -39,4 +39,4 @@ Mount any additional volumes to your instance, for example, unique user data.
 
 Any environment variables that you want to modify
 
-To see how you might update runtime options in your instance customisation plugin, you can refer to the examples in this repository.
+To see how you might update runtime options in your instance customisation plugin, you can refer to the [examples](examples/golang/instance-customisation-plugin) in this repository.
