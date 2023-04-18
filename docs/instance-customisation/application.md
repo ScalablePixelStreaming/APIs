@@ -19,7 +19,7 @@ service-name.namespace.svc.cluster-domain
 ```
 
 Where:
-    - `service-name` is **sps-instance-customisation-plugin**
-    - `namespace` is **default**
-    - `svc` is **svc**
-    - `cluster-domain` is **cluster.local**
+- `service-name` is **sps-instance-customisation-plugin**
+- `namespace` is **default** (this may change depending on the cloud platform you are using)
+- `svc` is **svc**
+- `cluster-domain` is **cluster.local**
