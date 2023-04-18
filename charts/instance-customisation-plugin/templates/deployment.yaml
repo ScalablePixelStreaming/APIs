@@ -35,12 +35,14 @@ spec:
       labels:
         app.kubernetes.io/name: sps-instance-customisation-plugin
     spec:
-      tolerations:
-        - operator: "Exists"
       containers:
       - image: {{ .Values.image }}
         imagePullPolicy: Always
         name: sps-instance-customisation-plugin
         ports:
         - containerPort: {{ .Values.port }}
+      {{ if and (ne .Values.imageCredentials.registry "") (ne .Values.imageCredentials.username "") (ne .Values.imageCredentials.password "") }}
+      imagePullSecrets:
+      - name: sps-instance-customisation-plugin
+      {{ end }}
 ---

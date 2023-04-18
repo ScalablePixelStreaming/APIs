@@ -2,5 +2,12 @@
 # The image of the instance customisation plugin container
 image: "ghcr.io/scalablepixelstreaming/apis/instance-customisation-plugin:latest"
 
+# Credentials for the instance customisation plugin image if it is pulled from a private registry
+imageCredentials:
+  registry: ""
+  username: ""
+  password: ""
+  email: ""
+
 # The port this instance customisation plugin should listen on
 port: 55774
