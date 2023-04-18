@@ -17,7 +17,7 @@ This is a string that can be formatted to send any number of arbitrary options f
 Keeping in mind that this data can represent **anything that you want**. It is up to you what you do with this in your instance customisation plugin.
 
 ### Runtime Options
-Runtime Options provides your instance customisation plugin with access to the configured options from your instances Application. These will be sent back to Scalable Pixel Streaming when requesting an instance, so any modifications your instance customisation plugin makes to these options will be reflected.
+Runtime Options allow your instance customisation plugin to access the configurations you have set for a given Version (e.g. resolution). These configurations will be sent back to Scalable Pixel Streaming when requesting an instance, so any modifications your instance customisation plugin makes to these options will be reflected at runtime (e.g. where instance 1 has a resolution of 1920x1080 and instance 2 has a resolution of 1280x720).
 
 **Resolution**
 
