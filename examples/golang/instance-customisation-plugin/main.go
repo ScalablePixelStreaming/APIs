@@ -53,11 +53,13 @@ func (server *InstanceCustomisationPluginServer) UpdateRuntimeOptions(ctx contex
 	}
 
 	// Dynamically adding a volume mount to the requested instance.
-	req.RuntimeOptions.VolumeMounts = append(req.RuntimeOptions.VolumeMounts, &customisation.RuntimeOptions_VolumeMounts{
-		Name:      "my-custom-mount",
-		MountPath: "/home/ue4/my-custom-mount",
-		ReadOnly:  false,
-	})
+	// Volume mounts require a persistent volume claim to exist on the cluster prior to attempting to add volume mounts
+	// See: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+	// req.RuntimeOptions.VolumeMounts = append(req.RuntimeOptions.VolumeMounts, &customisation.RuntimeOptions_VolumeMounts{
+	// 	Name:      "my-custom-mount",
+	// 	MountPath: "/home/ue4/my-custom-mount",
+	// 	ReadOnly:  false,
+	// })
 
 	// Here is where you might do something with loading a map that was selected by the user
 	log.Println("Here is where we might load the following map: " + options.Map)
