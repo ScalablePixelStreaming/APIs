@@ -33,7 +33,9 @@ Any additional arguments you wish to add to your application. Please note that t
 
 **Volume Mounts**
 
-Mount any additional volumes to your instance, for example, unique user data.
+Mount any additional volumes to your instance, for example, unique user data. 
+
+Volume mounts require a persistent volume claim to exist prior to attempting to add volume mounts to your instances (see [https://kubernetes.io/docs/concepts/storage/persistent-volumes/](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)). If you incorrectly configure your volume mounts your application instances will fail to start.
 
 **Environment Variables**
 
