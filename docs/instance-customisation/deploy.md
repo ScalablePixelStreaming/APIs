@@ -17,3 +17,5 @@ To change the helm chart to use your own container image:
 ```
 helm install instance-customisation-plugin charts/instance-customisation-plugin --set image=your_registry/your_repo/image:tag
 ```
+
+Where the image `your_registry/your_repo/image:tag` is a valid image tag to your containersed instance customisation plugin.
