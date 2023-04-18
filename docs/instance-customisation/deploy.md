@@ -12,10 +12,31 @@ Scalable Pixel Streaming is installed onto a [kubernetes](https://kubernetes.io/
 
 There is a helm chart provided in this repository available [here](charts/instance-customisation-plugin). This chart includes the necessary resources to deploy an instance customisation plugin. By default the helm chart comes with the [example plugin](examples/golang/instance-customisation-plugin) already configured.
 
-To change the helm chart to use your own container image:
+To change the helm chart to use your own containerised instance customisation plugin:
 
 ```
 helm install instance-customisation-plugin charts/instance-customisation-plugin --set image=your_registry/your_repo/image:tag
 ```
 
 Where the image `your_registry/your_repo/image:tag` is a valid image tag to your containersed instance customisation plugin.
+
+
+If your container is stored in a private repository, additional values are required when installing the instance customisation plugin helm chart.
+
+**imageCredentials.registry**
+
+The URL for your container registry, for example, if you are using Docker this would be `https://index.docker.io/v2/`
+
+**imageCredentials.username**
+
+The username that you use to authenticate with your container registry
+
+**imageCredentials.password**
+
+The password that you use to authenticate with your container registry
+
+
+An example of what a `helm install` command might look like for a private repository:
+```
+helm install instance-customisation-plugin charts/instance-customisation-plugin --set imageCredentials.registry=MY_REGISTRY --set imageCredentials.username=MY_USERNAME --set imageCredentials.password=MY_PASSWORD  --set image=your_registry/your_repo/image:tag
+```
