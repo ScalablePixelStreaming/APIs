@@ -25,7 +25,7 @@ If your container is stored in a private repository, additional values are requi
 
 **imageCredentials.registry**
 
-The URL for your container registry, for example, if you are using Docker this would be `https://index.docker.io/v2/`
+The URL for your container registry. If you are using Docker this would be `https://index.docker.io/v2/`
 
 **imageCredentials.username**
 
