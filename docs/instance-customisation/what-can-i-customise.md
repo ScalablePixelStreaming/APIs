@@ -35,10 +35,10 @@ Any additional arguments you wish to add to your application. Please note that t
 
 Mount any additional volumes to your instance, for example, unique user data. 
 
-Volume mounts require a persistent volume claim to exist prior to attempting to add volume mounts to your instances (see [https://kubernetes.io/docs/concepts/storage/persistent-volumes/](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)). If you incorrectly configure your volume mounts your application instances will fail to start.
+Volume mounts require a persistent volume claim to exist prior to attempting to add volume mounts to your instances (see [Kubernetes - Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)). If you incorrectly configure your volume mounts your application instances will fail to start.
 
 **Environment Variables**
 
 Any environment variables that you want to modify
 
-To see how you might update runtime options in your instance customisation plugin, you can refer to the [examples](examples/golang/instance-customisation-plugin) in this repository.
+To see how you might update runtime options in your instance customisation plugin, you can refer to the [examples](../../examples/golang/instance-customisation-plugin) in this repository.
