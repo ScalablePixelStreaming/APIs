@@ -21,15 +21,15 @@ Runtime Options allow your instance customisation plugin to access the configura
 
 **Resolution**
 
-The resolution of the instance
+The resolution of the instance.
 
 **Pixel Streaming Max FPS**
 
-The maximum FPS that will be streamed back to the client. Beneficial on low bandwidth connections
+The maximum FPS that will be streamed back to the client. Beneficial on low bandwidth connections.
 
 **Arguments**
 
-Any additional arguments you wish to add to your application. Please note that these arguments will be appended to the front of the argument list
+Any additional arguments you wish to add to your application. Please note that these arguments will be appended to the front of the argument list.
 
 **Volume Mounts**
 
@@ -39,6 +39,9 @@ Volume mounts require a persistent volume claim to exist prior to attempting to 
 
 **Environment Variables**
 
-Any environment variables that you want to modify
+Any environment variables that you want to modify.
 
-To see how you might update runtime options in your instance customisation plugin, you can refer to the [examples](../../examples/golang/instance-customisation-plugin) in this repository.
+**Examples**
+
+To see how you might update runtime options in your instance customisation plugin, you can refer to the [examples](/examples/golang/instance-customisation-plugin) in this repository.
+
