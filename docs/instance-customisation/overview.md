@@ -1,9 +1,11 @@
-## What is Instance Customisation
-Scalable Pixel Streaming provides you with the option to configure and **deploy your own instance customisation plugins**, providing you with the ability to customise certain aspects of your Scalable Pixel Streaming application **as they are requested**. The benefit to deploying your own instance customisation plugin is that you can change your Scalable Pixel Streaming application at **runtime**.
+## Instance customisation
 
-The instance customisation plugin API sends the ****Instance ID****, ****Player ID****, ****Plugin Options**** and ****Runtime Options**** as part of the `UpdateRuntimeOptionsRequest` request and responds with a version of the `RuntimeOptions`.
+Scalable Pixel Streaming provides users with an option to configure and **deploy their own instance plugins**, customising certain aspects of their Scalable Pixel Streaming at **runtime**.
 
-### What is the difference between Application and Instance customisation?
-Applications can be configured with many of the same options that are available through an instance customisation plugin. The difference is that an Application’s options are applied to **every instance of that Application**, whereas instance customisation plugin's **allow instance configuration on a per user level** and even **allow an end user to influence your instance configuration**. 
+The instance customisation plugin API sends the **Instance ID**, **Player ID**, **Plugin Options**, and **Runtime Options** as part of the `UpdateRuntimeOptionsRequest` request and responds with a version of the `RuntimeOptions`.
 
-It is entirely up to you how you choose to customise your instances, these could range from things like map selection, attaching storage volumes to your instance based on a user account, etc.
+### What is the difference between application customisation and instance customisation?
+
+Applications can be configured with many of the same options that are available through an instance customisation plugin. The difference is that application options are applied to **every instance of that application**, whereas instance customisation plugins allow instance configuration on a per-user level and can even allow an end user to influence the instance configuration. 
+
+It is entirely up to you how you choose to customise your instances, for example, you could add map selection, attach storage volumes to the instance based on a user account, etc.
