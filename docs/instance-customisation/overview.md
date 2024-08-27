@@ -8,4 +8,4 @@ The instance customisation plugin API sends the **Instance ID**, **Player ID**, 
 
 Applications can be configured with many of the same options that are available through an instance customisation plugin. The difference is that application options are applied to **every instance of that application**, whereas instance customisation plugins allow instance configuration on a per-user level and can even allow an end user to influence the instance configuration. 
 
-It is entirely up to you how you choose to customise your instances, for example, you could add map selection, attach storage volumes to the instance based on a user account, etc.
+It is entirely up to you how you choose to customise your instances, for example, you could add map selection, or attach storage volumes to the instance based on a user account, etc.
