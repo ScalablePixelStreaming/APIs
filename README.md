@@ -1,30 +1,25 @@
 # Scalable Pixel Streaming APIs
 
-This repository contains definitions and Go packages for consuming the public APIs exposed by Scalable Pixel Streaming that are versioned independently of SPS itself. (Note that the REST API is currently versioned alongside SPS and is not included in this repository.)
+This repository contains definitions and Go packages for consuming the public APIs exposed by Scalable Pixel Streaming that are versioned independently of SPS itself. 
+
+The REST API is currently versioned alongside SPS and is not included in this repository. Refer to the [REST API section of our documentation](http://docs.scalablestreaming.io/tools-and-software/rest-api) for more information.
 
 The following APIs are currently available:
 
-- **Authentication Plugin Plugin API:** used to provide authentication for Pixel Streaming applications.
+- **Authentication Plugin Plugin API** for providing authentication for Pixel Streaming applications.
 
-- **Instance Customisation Plugin API:** used to dynamically modify the runtime options of individual instances of a Pixel Streaming application.
+- **Instance Customisation Plugin API** for dynamically modifying the runtime options of individual instances of a Pixel Streaming application.
 
 ## Instance Customisation Plugin API Docs
-- [Overview](/docs/instance-customisation/overview.md)
-- [What can I customise](/docs/instance-customisation/what-can-i-customise.md)
-  - [Plugin Options](/docs/instance-customisation/what-can-i-customise.md#plugin-options)
-  - [Runtime Options](/docs/instance-customisation/what-can-i-customise.md#runtime-options)
-- [Using the API](/docs/instance-customisation/usage.md)
-  - [Generating code](/docs/instance-customisation/usage.md#generating-code)
-  - [Adding customisation package](/docs/instance-customisation/usage.md#adding-customisation-package-to-your-go-application)
-  - [Importing the package](/docs/instance-customisation/usage.md#importing-the-package)
-  - [Implementing the API](/docs/instance-customisation/usage.md#implementing-the-api-in-go)
-- [Deploying the plugin](/docs/instance-customisation/deploy.md)
-  - [Building a container](/docs/instance-customisation/deploy.md#building-a-container)
-  - [Deploying to the cluster](/docs/instance-customisation/deploy.md#deploying-to-the-cluster)
-- [Configure Application](/docs/instance-customisation/application.md)
-  - [Dashboard](/docs/instance-customisation/application.md#dashboard)
 
+This repository contains the following supporting documentation for the instance customisation plugin:
+
+- [Overview of instance and application customisation](/docs/instance-customisation/overview.md)
+- [Plugin option and runtime options](/docs/instance-customisation/what-can-i-customise.md)
+- [Implementing the API in an application](/docs/instance-customisation/usage.md)
+- [Deploying the plugin to the cloud](/docs/instance-customisation/deploy.md) 
+- [Configure your application to use the plugin](/docs/instance-customisation/application.md)
 
 ## Legal
 
-Copyright &copy; 2022, TensorWorks Pty Ltd. Licensed under the MIT License, see the file [LICENSE](./LICENSE) for details.
+Copyright &copy; 2024, TensorWorks Pty Ltd. Licensed under the MIT License, see the [license](./LICENSE) file for details.

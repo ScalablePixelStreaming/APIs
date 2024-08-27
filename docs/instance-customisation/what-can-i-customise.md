@@ -1,10 +1,12 @@
-## What can I customise?
-The Instance Customisation Plugin API exposes a range of configurable options for your Scalable Pixel Streaming applications. Scalable Pixel Streaming will send what is currently configured as part of your Application to your instance customisation plugin and you have the option to modify these options as you see fit.
+## What can be customised?
 
-### Plugin Options
-One of the key features to instance customisation is the ability to send data from your frontend implementation through to your instance customisation plugin at the time of requesting an instance.
+The instance customisation plugin API exposes a range of configurable options for your Scalable Pixel Streaming applications. SPS will send the current configuration of your application to your instance customisation plugin, where you will have the option to modify these options as you see fit.
 
-This is a string that can be formatted to send any number of arbitrary options from your frontend to your instance customisation plugin and it might look something like the following:
+### Plugin options
+
+One of the key features of instance customisation is the ability to send data from your frontend implementation to your instance customisation plugin at the time of requesting an instance.
+
+Here's an example of a string that can be formatted to send any number of options from your frontend to your instance customisation plugin:
 
 ```json
 {
@@ -14,28 +16,27 @@ This is a string that can be formatted to send any number of arbitrary options f
 }
 ```
 
-Keeping in mind that this data can represent **anything that you want**. It is up to you what you do with this in your instance customisation plugin.
+This data can represent any parameter, so it is entirely up to you how to configure your instance customisation plugin.
 
-### Runtime Options
-Runtime Options allow your instance customisation plugin to access the configurations you have set for a given Version (e.g. resolution). These configurations will be sent back to Scalable Pixel Streaming when requesting an instance, so any modifications your instance customisation plugin makes to these options will be reflected at runtime (e.g. where instance 1 has a resolution of 1920x1080 and instance 2 has a resolution of 1280x720).
+### Runtime options
+
+Runtime options allow your instance customisation plugin to access the configuration you have set for a given version (e.g. stream resolution). This configuration will be sent back to Scalable Pixel Streaming when requesting an instance, so any modifications that your instance customisation plugin makes will be reflected at runtime; for example, two instances could be running with different stream resolutions.
 
 **Resolution**
 
-The resolution of the instance.
+The stream resolution of the instance.
 
 **Pixel Streaming Max FPS**
 
-The maximum FPS that will be streamed back to the client. Beneficial on low bandwidth connections.
+The maximum FPS that will be streamed back to the client. This limiter is beneficial on low-bandwidth connections.
 
 **Arguments**
 
-Any additional arguments you wish to add to your application. Please note that these arguments will be appended to the front of the argument list.
+Any additional arguments you wish to add to your application. Note that these arguments will be appended to the front of the argument list.
 
 **Volume Mounts**
 
-Mount any additional volumes to your instance, for example, unique user data. 
-
-Volume mounts require a persistent volume claim to exist prior to attempting to add volume mounts to your instances (see [Kubernetes - Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)). If you incorrectly configure your volume mounts your application instances will fail to start.
+Mount any additional volumes to your instance, for example, unique user data. Volume mounts require a [persistent volume claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) to exist prior to attempting to add volume mounts to your instances. If volume mounts are incorrectly configured, the application instances will fail to start.
 
 **Environment Variables**
 
@@ -44,4 +45,3 @@ Any environment variables that you want to modify.
 **Examples**
 
 To see how you might update runtime options in your instance customisation plugin, you can refer to the [examples](/examples/golang/instance-customisation-plugin) in this repository.
-
