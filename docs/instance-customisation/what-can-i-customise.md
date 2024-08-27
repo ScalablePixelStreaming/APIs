@@ -20,7 +20,7 @@ This data can represent any parameter, so it is entirely up to you how to config
 
 ### Runtime options
 
-Runtime options allow your instance customisation plugin to access the configuration you have set for a given version (e.g., stream resolution). This configuration will be sent back to Scalable Pixel Streaming when requesting an instance, so any modifications that your instance customisation plugin makes will be reflected at runtime; for example, two instances could be running with different stream resolutions.
+Runtime options allow your instance customisation plugin to access the configuration you have set for a given version (e.g. stream resolution). This configuration will be sent back to Scalable Pixel Streaming when requesting an instance, so any modifications that your instance customisation plugin makes will be reflected at runtime; for example, two instances could be running with different stream resolutions.
 
 **Resolution**
 
