@@ -1,6 +1,6 @@
 ## Usage
 
-The following example demonstrates implementing the instance customisation API into a Go application, however it is possible to generate the necessary code in other languages.
+The following example demonstrates how to implement the instance customisation API into a Go application, however it is possible to generate the necessary code in other languages.
 
 ### Generating code
 
